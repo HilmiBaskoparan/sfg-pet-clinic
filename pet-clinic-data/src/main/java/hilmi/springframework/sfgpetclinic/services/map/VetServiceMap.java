@@ -1,11 +1,11 @@
 package hilmi.springframework.sfgpetclinic.services.map;
 
 import hilmi.springframework.sfgpetclinic.model.Vet;
-import hilmi.springframework.sfgpetclinic.services.CrudService;
+import hilmi.springframework.sfgpetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
