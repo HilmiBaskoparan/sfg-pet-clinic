@@ -1,13 +1,13 @@
 package hilmi.springframework.sfgpetclinic.services.map;
 
 import hilmi.springframework.sfgpetclinic.model.Specialty;
-import hilmi.springframework.sfgpetclinic.services.SpecialtiesService;
+import hilmi.springframework.sfgpetclinic.services.SpecialtyService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class SpecialityMapService extends AbstractMapService<Specialty, Long> implements SpecialtiesService {
+public class SpecialityMapService extends AbstractMapService<Specialty, Long> implements SpecialtyService {
 
     @Override
     public Set<Specialty> findAll() {
