@@ -15,14 +15,16 @@ public class DataLoader implements CommandLineRunner {
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
     private final VisitService visitService;
+    private final PetService petService;
 
     public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
-                      SpecialtyService specialtyService, VisitService visitService) {
+                      SpecialtyService specialtyService, VisitService visitService, PetService petService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
         this.visitService = visitService;
+        this.petService = petService;
     }
 
     @Override
@@ -70,6 +72,7 @@ public class DataLoader implements CommandLineRunner {
         mikesPet.setName("Rosco");
         owner1.getPets().add(mikesPet);
 
+        petService.save(mikesPet);
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
@@ -86,6 +89,7 @@ public class DataLoader implements CommandLineRunner {
         fionasCat.setPetType(savedCatPetType);
         owner2.getPets().add(fionasCat);
 
+        petService.save(fionasCat);
         ownerService.save(owner2);
 
         Visit catVisit = new Visit();
